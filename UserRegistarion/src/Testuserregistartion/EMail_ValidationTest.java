@@ -4,12 +4,12 @@ import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import userregistration.PatternMatcher;
-import userregistration.UserRegistrationForm;
 
 public class EMail_ValidationTest {
     static PatternMatcher pattern;
     String[] mail_id = new String[]{"kishore@gmail.com","123.kishore@0909gmail.com","abc.@gmail.com"};
     String[] invalid_mail = new String[]{"abc@@.com","abc@","123.abc-_"};
+
     @BeforeClass
     public static void init(){
         pattern = PatternMatcherInstance.getInstance();
