@@ -12,7 +12,7 @@ public class FirstNameValidationTest {
 
     @BeforeClass
     public static void init(){
-        pattern = new PatternMatcher();
+        pattern = PatternMatcherInstance.getInstance();
     }
 
     @Test
