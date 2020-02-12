@@ -1,12 +1,17 @@
+/**UserRegistration class is used to get the user details and validating the user details
+ * @author kishorereddy
+ * @version 1.0
+ * @since 11-02-2020
+ * @file UserRegistration.java
+ */
 package userregistration;
-
-
 import java.util.InputMismatchException;
 
 public class UserRegistrationForm {
     static PatternMatcher pattern = new PatternMatcher();
     static UserInputData user = new UserInputData();
 
+    //method to get the user details and validating the details
     public static void addUserDetails(){
         String firstName;
         String lastName;
@@ -42,6 +47,7 @@ public class UserRegistrationForm {
         }
         throw new InputMismatchException("data was invalid");
     }
+
     public static void main(String[] args){
         addUserDetails();
     }
