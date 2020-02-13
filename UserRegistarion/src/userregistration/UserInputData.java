@@ -7,13 +7,25 @@ public class UserInputData {
 
     public String stringInputData(){
         System.out.println("enter the details :");
-        String data = scanner.nextLine();
+        String data = null;
+        try {
+            data = scanner.nextLine();
+        }
+        catch (Exception e) {
+            System.out.println("enter valid data");
+        }
         return data;
     }
 
     public int intInputData(){
         System.out.println("enter the details: ");
-        int data = scanner.nextInt();
+        int data =0 ;
+        try {
+            data = scanner.nextInt();
+        }
+        catch (Exception e){
+            System.out.println("enter valid data ");
+        }
         return data;
     }
 }
