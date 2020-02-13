@@ -62,7 +62,7 @@ public class UserRegistrationForm {
 
     public static void main(String[] args) {
         while(!addUserDetails()){
-
+            System.out.println("enter the valid details ");
         }
     }
 }
