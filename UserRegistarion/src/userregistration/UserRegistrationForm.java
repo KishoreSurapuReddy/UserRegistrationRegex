@@ -8,65 +8,61 @@
  */
 package userregistration;
 
-import java.util.InputMismatchException;
-
 public class UserRegistrationForm {
     static PatternMatcher pattern = new PatternMatcher();
     static UserInputData user = new UserInputData();
 
     //method to get the user details and validating the details
-    public static void addUserDetails() {
+    public static boolean addUserDetails() {
         String firstName;
         String lastName;
         String eMailId;
         String userName;
-        String password;
+        String password ;
         String mobileNumber;
         System.out.println(" first name :");
         firstName = user.stringInputData();
         if (!pattern.validateFirstName(firstName)) {
             System.out.println("enter valid first name");
-            addUserDetails();
-            return;
+            return false;
         }
         System.out.println(" last name :");
         lastName = user.stringInputData();
         if (!pattern.validateLastName(lastName)) {
             System.out.println("enter valid last name");
-            addUserDetails();
-            return;
+            return false;
         }
         System.out.println(" EMailId :");
         eMailId = user.stringInputData();
         if (!pattern.validateEMailId(eMailId)) {
             System.out.println("enter valid eMailId ");
-            addUserDetails();
-            return;
+            return false;
         }
         System.out.println(" User name :");
         userName = user.stringInputData();
         if (!pattern.validateUserName(userName)) {
             System.out.println("enter valid user name");
-            addUserDetails();
-            return;
+            return false;
         }
         System.out.println(" Password :");
         password = user.stringInputData();
         if (!pattern.validatePassword(password)) {
             System.out.println("enter valid password ");
-            addUserDetails();
-            return;
+            return false;
         }
         System.out.println(" MobileNumber :");
         mobileNumber = user.stringInputData();
         if (!pattern.validateMobileNumber(mobileNumber)) {
             System.out.println("enter valid mobileNumber");
-            addUserDetails();
-            return;
+            return false;
         }
         UserRegistration user = new UserRegistration(firstName, lastName, userName, eMailId, password, mobileNumber);
+        return  true;
     }
+
     public static void main(String[] args) {
-        addUserDetails();
+        while(!addUserDetails()){
+
+        }
     }
 }
